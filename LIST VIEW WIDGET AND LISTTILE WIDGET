@@ -1,0 +1,46 @@
+###LIST VIEW WIDGET AND LISTTILE WIDGET :
+
+  
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
+class Firstscreen extends StatelessWidget {
+  const Firstscreen({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("WhatsApp",color : Colors.blue),
+      ),
+      body: createListView(),
+    );
+  }
+
+    Widget createListView() {
+     var listView = ListView(
+      children: [
+       
+        ListTile(
+          
+          leading: Icon(Icons.favorite,color:Colors.blue,),
+          title: Text("MOM"),
+          subtitle: Text("come home"),
+          trailing: Icon(Icons.done_all),
+          contentPadding: EdgeInsets.all(10),
+          tileColor: Colors.yellow,
+        ),
+         ListTile(
+          leading: Icon(Icons.favorite,color:Colors.blue,),
+          title: Text("DAD"),
+          subtitle: Text("come home mom did chicken"),
+          trailing: Icon(Icons.done_all),
+          contentPadding: EdgeInsets.all(10),
+          tileColor: Colors.lightGreen,
+        ),
+      
+      ],
+     );
+      return listView;
+   
+    }
+}
