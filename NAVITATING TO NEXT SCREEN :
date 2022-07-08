@@ -1,0 +1,85 @@
+NAVITATING TO NEXT SCREEN :
+
+
+
+import 'package:demo/first.dart';
+import 'package:flutter/material.dart';
+
+//widgetsApp
+//materialApp
+void main() {
+  runApp(const Myapp());
+}
+
+class Myapp extends StatelessWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: "tusha",
+        color: Colors.red,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.lightGreen,
+          brightness: Brightness.light,
+        ),
+        home: Firstscreen(),);
+  }
+}
+
+
+// ignore_for_file: deprecated_member_use
+
+import 'package:demo/page2.dart';
+import 'package:flutter/material.dart';
+
+class Firstscreen extends StatelessWidget {
+  const Firstscreen({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("FIRST"),
+      ),
+     
+      body:
+      Container(
+        alignment: Alignment.center,
+        child:
+         RaisedButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Secondscreen() ));
+        },
+        child: Text("Secondscreen"),
+      )),
+    );
+  }
+}
+
+
+// ignore_for_file: deprecated_member_use
+
+import 'package:flutter/material.dart';
+
+class Secondscreen extends StatelessWidget {
+  const Secondscreen({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SECOND"),
+      ),
+      // ignore: deprecated_member_use
+      body: Container(
+          alignment: Alignment.center,
+          child: RaisedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text("firstscreen"),
+          )),
+    );
+  }
+}
