@@ -1,0 +1,37 @@
+SNACKBAR :
+
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
+
+import 'package:flutter/material.dart';
+
+class First extends StatelessWidget {
+ 
+
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        key: _scaffoldKey,
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text("kranthi"),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 44, 139, 222),
+        ),
+        body: Container(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.yellow,
+            tooltip: 'TUSHA',
+            onPressed: () {
+              var snackbar = SnackBar(content: Text("Added to favourites"),backgroundColor: Clors.green,
+action : SnackBarAction(lable : "Undo",textColor : colors.white,onPressed(){
+print("undo favourities");});
+             
+              _scaffoldKey.currentState?.showSnackBar(snackbar);
+            },
+            child: Icon(
+              Icons.favorite,
+            )));
+  }
+}
