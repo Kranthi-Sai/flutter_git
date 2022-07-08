@@ -1,0 +1,59 @@
+ALERTDIALOGBOX :
+
+
+import 'package:flutter/material.dart';
+
+class First extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text("kranthi"),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 44, 139, 222),
+        ),
+        body: RaisedButton(
+          onPressed: () {
+            createAlertDialog(context);
+          },
+          child: Text("alert"),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.yellow,
+            tooltip: 'TUSHA',
+            onPressed: () {},
+            child: Icon(
+              Icons.favorite,
+            )));
+  }
+
+  createAlertDialog(BuildContext context) {
+    var alertDialog = AlertDialog(
+      backgroundColor: Colors.blue,
+      elevation: 10.0,
+      title: Text("congrats"),
+      content: Text("i am"),
+      actions: [
+        GestureDetector(
+          child: Text("close"),
+          onDoubleTap: (){
+            Navigator.pop(context);
+          },
+        )
+      //  RaisedButton(
+          //onPressed: () {
+            //Navigator.pop(context);
+          //},
+        //  child: Text("close"),
+      //  )
+      ],
+    );
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alertDialog;
+        });
+  }
+}
