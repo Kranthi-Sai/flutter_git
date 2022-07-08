@@ -1,0 +1,29 @@
+//CONTAINER - PADDING -MARGIN :
+
+// ignore_for_file: deprecated_member_use
+
+import 'package:flutter/material.dart';
+
+class First extends StatelessWidget {
+  
+  First({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text("kranthi"),
+          centerTitle: true,
+          backgroundColor: Color.fromARGB(255, 44, 139, 222),
+        ),
+        body: Container(
+         alignment: Alignment.center,
+         color: Colors.green,
+         height: 300,
+         width: 800,
+         child: Text("i am kranthi",style: TextStyle(backgroundColor: Colors.red,fontSize: 15),),
+         margin: EdgeInsets.all(10),
+         padding: EdgeInsets.all(30),
+        ));
+  }
+}
